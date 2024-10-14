@@ -7,5 +7,6 @@ namespace WebAppSeminar4.Abstraction
     {
         int AddUser(UserDTO userDTO);
         RoleId CheckUser(LoginDTO loginDTO);
+        UserDTO Authenticate(LoginDTO loginDTO);
     }
 }

@@ -34,6 +34,19 @@ namespace WebAppSeminar4.Abstraction
             }
         }
 
+        public UserDTO Authenticate(LoginDTO loginDTO)
+        {
+            if (loginDTO.Name == "admin" && loginDTO.Password == "admin")
+            { 
+                return new UserDTO { Name = loginDTO.Name, Password = loginDTO.Password, Role = UserRoleDTO.Admin };
+            }
+            if (loginDTO.Name == "user" && loginDTO.Password == "user")
+            {
+                return new UserDTO { Name = loginDTO.Name, Password = loginDTO.Password, Role = UserRoleDTO.User };
+            }
+            return null;
+        }
+
         public RoleId CheckUser(LoginDTO loginDTO)
         {
             using (var context = new UserContext())

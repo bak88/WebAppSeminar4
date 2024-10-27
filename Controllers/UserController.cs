@@ -36,7 +36,7 @@ namespace WebAppSeminar4.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("checkuser")]
         public ActionResult<RoleId> CheckUser(LoginDTO loginDTO)
         {
             try
